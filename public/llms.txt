@@ -1,0 +1,6 @@
+# FinPilot AI
+
+> AI-powered personal finance manager for tracking income, expenses, accounts and savings goals.
+
+## Pages
+- [Home](/): Product overview and features of FinPilot AI.
