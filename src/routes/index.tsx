@@ -14,13 +14,13 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FinPilot AI — AI Personal Finance Manager" },
+      { title: "SpendSense AI — AI Personal Finance Manager" },
       {
         name: "description",
         content:
           "Track income, expenses, accounts and savings goals with AI insights that explain your spending and predict your month-end balance.",
       },
-      { property: "og:title", content: "FinPilot AI — AI Personal Finance Manager" },
+      { property: "og:title", content: "SpendSense AI — AI Personal Finance Manager" },
       {
         property: "og:description",
         content:
@@ -71,7 +71,7 @@ function Landing() {
           <div className="bg-brand-gradient grid h-9 w-9 shrink-0 place-items-center rounded-xl">
             <PiggyBank className="text-primary-foreground h-4 w-4" />
           </div>
-          <span className="truncate font-bold tracking-tight">FinPilot AI</span>
+          <span className="truncate font-bold tracking-tight">SpendSense AI</span>
         </div>
         <Button asChild variant="ghost" size="sm">
           <Link to="/auth">Sign in</Link>
@@ -87,7 +87,7 @@ function Landing() {
             Your money, <span className="text-gradient">on autopilot.</span>
           </h1>
           <p className="text-muted-foreground mx-auto mt-5 max-w-xl text-base sm:text-lg">
-            FinPilot AI tracks every rupee across accounts, spots wasteful spending, and
+            SpendSense AI tracks every rupee across accounts, spots wasteful spending, and
             tells you exactly how to hit your savings goals.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">

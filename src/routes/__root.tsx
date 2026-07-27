@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "FinPilot AI — AI personal finance manager" },
+      { title: "SpendSense AI — AI personal finance manager" },
       {
         name: "description",
         content:
           "Track income, expenses, accounts and savings goals with AI-powered insights.",
       },
-      { name: "author", content: "FinPilot AI" },
-      { property: "og:title", content: "FinPilot AI — AI personal finance manager" },
+      { name: "author", content: "SpendSense AI" },
+      { property: "og:title", content: "SpendSense AI — AI personal finance manager" },
       {
         property: "og:description",
         content:

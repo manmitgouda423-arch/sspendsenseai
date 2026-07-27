@@ -66,7 +66,7 @@ function Brand() {
         <Sparkles className="text-primary-foreground h-4 w-4" />
       </div>
       <div className="min-w-0">
-        <p className="truncate text-sm font-bold tracking-tight">FinPilot AI</p>
+        <p className="truncate text-sm font-bold tracking-tight">SpendSense AI</p>
         <p className="text-muted-foreground truncate text-[11px]">Money, on autopilot</p>
       </div>
     </div>

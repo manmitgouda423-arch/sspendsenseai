@@ -33,13 +33,13 @@ import { formatMoney, monthRange, shortDate, titleize } from "@/lib/finance";
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
     meta: [
-      { title: "Dashboard — FinPilot AI" },
+      { title: "Dashboard — SpendSense AI" },
       {
         name: "description",
         content:
           "See balance, monthly income, expenses, savings progress and spending breakdown at a glance.",
       },
-      { property: "og:title", content: "Dashboard — FinPilot AI" },
+      { property: "og:title", content: "Dashboard — SpendSense AI" },
       {
         property: "og:description",
         content: "Your live personal finance command centre.",

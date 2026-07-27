@@ -13,13 +13,13 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — FinPilot AI" },
+      { title: "Sign in — SpendSense AI" },
       {
         name: "description",
         content:
-          "Sign in or create your FinPilot AI account to track spending, budgets and savings goals.",
+          "Sign in or create your SpendSense AI account to track spending, budgets and savings goals.",
       },
-      { property: "og:title", content: "Sign in — FinPilot AI" },
+      { property: "og:title", content: "Sign in — SpendSense AI" },
       {
         property: "og:description",
         content: "Access your AI-powered personal finance dashboard.",
@@ -117,7 +117,7 @@ function AuthPage() {
               <PiggyBank className="text-primary-foreground h-5 w-5" />
             </div>
             <div>
-              <p className="font-bold tracking-tight">FinPilot AI</p>
+              <p className="font-bold tracking-tight">SpendSense AI</p>
               <p className="text-muted-foreground text-xs">
                 {forgot ? "Reset your password" : "Your AI finance copilot"}
               </p>

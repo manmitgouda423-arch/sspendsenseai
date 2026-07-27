@@ -21,13 +21,13 @@ import { GOAL_PRESETS, formatMoney } from "@/lib/finance";
 export const Route = createFileRoute("/_authenticated/goals")({
   head: () => ({
     meta: [
-      { title: "Savings goals — FinPilot AI" },
+      { title: "Savings goals — SpendSense AI" },
       {
         name: "description",
         content:
           "Set targets for your emergency fund, car, house or vacation and watch progress build every month.",
       },
-      { property: "og:title", content: "Savings goals — FinPilot AI" },
+      { property: "og:title", content: "Savings goals — SpendSense AI" },
       { property: "og:description", content: "Turn savings targets into progress bars." },
     ],
   }),

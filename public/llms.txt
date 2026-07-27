@@ -1,6 +1,6 @@
-# FinPilot AI
+# SpendSense AI
 
 > AI-powered personal finance manager for tracking income, expenses, accounts and savings goals.
 
 ## Pages
-- [Home](/): Product overview and features of FinPilot AI.
+- [Home](/): Product overview and features of SpendSense AI.

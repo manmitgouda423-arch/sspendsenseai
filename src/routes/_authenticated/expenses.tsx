@@ -4,13 +4,13 @@ import { TransactionsPage } from "@/components/transactions-page";
 export const Route = createFileRoute("/_authenticated/expenses")({
   head: () => ({
     meta: [
-      { title: "Expenses — FinPilot AI" },
+      { title: "Expenses — SpendSense AI" },
       {
         name: "description",
         content:
           "Track food, travel, bills, EMIs and subscriptions with merchants, payment methods and tags.",
       },
-      { property: "og:title", content: "Expenses — FinPilot AI" },
+      { property: "og:title", content: "Expenses — SpendSense AI" },
       { property: "og:description", content: "Know exactly where your money goes." },
     ],
   }),

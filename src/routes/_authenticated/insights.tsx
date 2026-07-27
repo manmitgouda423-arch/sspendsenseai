@@ -14,13 +14,13 @@ import { monthRange, titleize } from "@/lib/finance";
 export const Route = createFileRoute("/_authenticated/insights")({
   head: () => ({
     meta: [
-      { title: "AI insights — FinPilot AI" },
+      { title: "AI insights — SpendSense AI" },
       {
         name: "description",
         content:
           "Get an AI financial health score, spending analysis and personalised savings advice from your own data.",
       },
-      { property: "og:title", content: "AI insights — FinPilot AI" },
+      { property: "og:title", content: "AI insights — SpendSense AI" },
       { property: "og:description", content: "Your money, explained by AI." },
     ],
   }),

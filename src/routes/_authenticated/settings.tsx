@@ -20,12 +20,12 @@ import { useProfile, useUpsert, useUser } from "@/lib/data";
 export const Route = createFileRoute("/_authenticated/settings")({
   head: () => ({
     meta: [
-      { title: "Settings — FinPilot AI" },
+      { title: "Settings — SpendSense AI" },
       {
         name: "description",
-        content: "Update your profile, preferred currency and monthly budget for FinPilot AI.",
+        content: "Update your profile, preferred currency and monthly budget for SpendSense AI.",
       },
-      { property: "og:title", content: "Settings — FinPilot AI" },
+      { property: "og:title", content: "Settings — SpendSense AI" },
       { property: "og:description", content: "Profile, currency and budget preferences." },
     ],
   }),
