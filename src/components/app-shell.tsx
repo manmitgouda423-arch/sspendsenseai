@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { TransactionDialog } from "@/components/transaction-dialog";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/spendsense-logo.png.asset.json";
 
 const NAV = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
