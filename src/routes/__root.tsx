@@ -79,21 +79,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SpendSense AI — AI personal finance manager" },
+      { title: "SpendSense AI — AI Personal Finance Manager" },
       {
         name: "description",
         content:
-          "Track income, expenses, accounts and savings goals with AI-powered insights.",
+          "Track income, expenses, accounts and savings goals with AI insights that explain your spending and predict your month-end balance.",
       },
       { name: "author", content: "SpendSense AI" },
-      { property: "og:title", content: "SpendSense AI — AI personal finance manager" },
+      { property: "og:title", content: "SpendSense AI — AI Personal Finance Manager" },
       {
         property: "og:description",
         content:
-          "Track income, expenses, accounts and savings goals with AI-powered insights.",
+          "Track income, expenses, accounts and savings goals with AI insights that explain your spending and predict your month-end balance.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SpendSense AI — AI Personal Finance Manager" },
+      { name: "twitter:description", content: "Track income, expenses, accounts and savings goals with AI insights that explain your spending and predict your month-end balance." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6933f8c0-d216-4be3-8dcd-5c29ef792dc3" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6933f8c0-d216-4be3-8dcd-5c29ef792dc3" },
     ],
 
     links: [

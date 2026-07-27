@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "A glassmorphic finance dashboard with smart charts, budgets, goals and an AI money coach.",
+          "Track income, expenses, accounts and savings goals with AI insights that explain your spending and predict your month-end balance.",
       },
     ],
   }),
