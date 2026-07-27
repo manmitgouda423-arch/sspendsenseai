@@ -113,9 +113,11 @@ function AuthPage() {
 
         <div className="glass animate-rise rounded-3xl p-6 sm:p-8">
           <div className="flex items-center gap-2.5">
-            <div className="bg-brand-gradient grid h-10 w-10 place-items-center rounded-xl">
-              <PiggyBank className="text-primary-foreground h-5 w-5" />
-            </div>
+            <img
+              src={logoAsset.url}
+              alt="SpendSense AI logo"
+              className="h-10 w-10 rounded-xl bg-white object-contain p-0.5"
+            />
             <div>
               <p className="font-bold tracking-tight">SpendSense AI</p>
               <p className="text-muted-foreground text-xs">
