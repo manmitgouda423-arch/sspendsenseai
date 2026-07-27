@@ -6,10 +6,11 @@ import {
   ShieldCheck,
   Target,
   ArrowRight,
-  PiggyBank,
+
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
+import logoAsset from "@/assets/spendsense-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
