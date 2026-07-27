@@ -68,9 +68,11 @@ function Landing() {
     <div className="min-h-screen">
       <header className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-6">
         <div className="flex min-w-0 items-center gap-2.5">
-          <div className="bg-brand-gradient grid h-9 w-9 shrink-0 place-items-center rounded-xl">
-            <PiggyBank className="text-primary-foreground h-4 w-4" />
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="SpendSense AI logo"
+            className="h-9 w-9 shrink-0 rounded-xl bg-white object-contain p-0.5"
+          />
           <span className="truncate font-bold tracking-tight">SpendSense AI</span>
         </div>
         <Button asChild variant="ghost" size="sm">
