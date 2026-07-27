@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Mail, Lock, Loader2, PiggyBank, ArrowLeft } from "lucide-react";
+import { Mail, Lock, Loader2, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { Button } from "@/components/ui/button";
@@ -9,17 +9,18 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import logoAsset from "@/assets/spendsense-logo.png.asset.json";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — FinPilot AI" },
+      { title: "Sign in — SpendSense AI" },
       {
         name: "description",
         content:
-          "Sign in or create your FinPilot AI account to track spending, budgets and savings goals.",
+          "Sign in or create your SpendSense AI account to track spending, budgets and savings goals.",
       },
-      { property: "og:title", content: "Sign in — FinPilot AI" },
+      { property: "og:title", content: "Sign in — SpendSense AI" },
       {
         property: "og:description",
         content: "Access your AI-powered personal finance dashboard.",
@@ -113,11 +114,13 @@ function AuthPage() {
 
         <div className="glass animate-rise rounded-3xl p-6 sm:p-8">
           <div className="flex items-center gap-2.5">
-            <div className="bg-brand-gradient grid h-10 w-10 place-items-center rounded-xl">
-              <PiggyBank className="text-primary-foreground h-5 w-5" />
-            </div>
+            <img
+              src={logoAsset.url}
+              alt="SpendSense AI logo"
+              className="h-10 w-10 rounded-xl bg-white object-contain p-0.5"
+            />
             <div>
-              <p className="font-bold tracking-tight">FinPilot AI</p>
+              <p className="font-bold tracking-tight">SpendSense AI</p>
               <p className="text-muted-foreground text-xs">
                 {forgot ? "Reset your password" : "Your AI finance copilot"}
               </p>

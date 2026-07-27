@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { TransactionDialog } from "@/components/transaction-dialog";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/spendsense-logo.png.asset.json";
 
 const NAV = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -62,11 +63,13 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 function Brand() {
   return (
     <div className="flex min-w-0 items-center gap-2.5">
-      <div className="bg-brand-gradient grid h-9 w-9 shrink-0 place-items-center rounded-xl">
-        <Sparkles className="text-primary-foreground h-4 w-4" />
-      </div>
+      <img
+        src={logoAsset.url}
+        alt="SpendSense AI logo"
+        className="h-9 w-9 shrink-0 rounded-xl bg-white object-contain p-0.5"
+      />
       <div className="min-w-0">
-        <p className="truncate text-sm font-bold tracking-tight">FinPilot AI</p>
+        <p className="truncate text-sm font-bold tracking-tight">SpendSense AI</p>
         <p className="text-muted-foreground truncate text-[11px]">Money, on autopilot</p>
       </div>
     </div>

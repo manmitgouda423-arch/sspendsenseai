@@ -9,9 +9,9 @@ import { Label } from "@/components/ui/label";
 export const Route = createFileRoute("/reset-password")({
   head: () => ({
     meta: [
-      { title: "Reset password — FinPilot AI" },
-      { name: "description", content: "Choose a new password for your FinPilot AI account." },
-      { property: "og:title", content: "Reset password — FinPilot AI" },
+      { title: "Reset password — SpendSense AI" },
+      { name: "description", content: "Choose a new password for your SpendSense AI account." },
+      { property: "og:title", content: "Reset password — SpendSense AI" },
       { property: "og:description", content: "Set a new password and get back to your dashboard." },
     ],
   }),

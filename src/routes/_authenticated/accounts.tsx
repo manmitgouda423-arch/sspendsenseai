@@ -28,13 +28,13 @@ import { ACCOUNT_TYPES, formatMoney, titleize } from "@/lib/finance";
 export const Route = createFileRoute("/_authenticated/accounts")({
   head: () => ({
     meta: [
-      { title: "Accounts — FinPilot AI" },
+      { title: "Accounts — SpendSense AI" },
       {
         name: "description",
         content:
           "Manage savings, current, wallet, cash, UPI and credit card accounts in one place.",
       },
-      { property: "og:title", content: "Accounts — FinPilot AI" },
+      { property: "og:title", content: "Accounts — SpendSense AI" },
       { property: "og:description", content: "All your money sources, one view." },
     ],
   }),
