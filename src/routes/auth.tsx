@@ -39,6 +39,7 @@ function AuthPage() {
   const [name, setName] = useState("");
   const [remember, setRemember] = useState(true);
   const [busy, setBusy] = useState(false);
+  const [pending, setPending] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.add("dark");
