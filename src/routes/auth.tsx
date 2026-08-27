@@ -39,6 +39,7 @@ function AuthPage() {
   const [name, setName] = useState("");
   const [remember, setRemember] = useState(true);
   const [busy, setBusy] = useState(false);
+  const [pending, setPending] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.add("dark");
@@ -75,7 +76,7 @@ function AuthPage() {
         return;
       }
       if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
@@ -84,7 +85,12 @@ function AuthPage() {
           },
         });
         if (error) throw error;
-        toast.success("Account created. You're in!");
+        if (data.session) {
+          toast.success("Account created. You're in!");
+          return;
+        }
+        setPending(true);
+        toast.success("Account created — confirm your email to continue.");
         return;
       }
       const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -101,6 +107,51 @@ function AuthPage() {
       });
       if (result.error) throw result.error;
     });
+
+  const resend = () =>
+    withBusy(async () => {
+      const { error } = await supabase.auth.resend({
+        type: "signup",
+        email,
+        options: { emailRedirectTo: window.location.origin },
+      });
+      if (error) throw error;
+      toast.success("Confirmation email sent again.");
+    });
+
+  if (pending) {
+    return (
+      <div className="grid min-h-screen place-items-center px-4 py-10">
+        <div className="glass animate-rise w-full max-w-md rounded-3xl p-6 text-center sm:p-8">
+          <img
+            src={logoAsset.url}
+            alt="SpendSense AI logo"
+            className="mx-auto h-12 w-12 rounded-xl bg-white object-contain p-0.5"
+          />
+          <h1 className="mt-4 text-lg font-bold tracking-tight">Confirm your email</h1>
+          <p className="text-muted-foreground mt-2 text-sm">
+            We sent a confirmation link to <span className="text-foreground">{email}</span>.
+            Open it to activate your account, then sign in.
+          </p>
+          <div className="mt-6 grid gap-2">
+            <Button onClick={resend} disabled={busy} variant="outline">
+              {busy ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+              Resend email
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setPending(false);
+                setMode("signin");
+              }}
+            >
+              Back to sign in
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="grid min-h-screen place-items-center px-4 py-10">
