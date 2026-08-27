@@ -2,9 +2,22 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useQueryClient } from "@tanstack/react-query";
-import { LogOut } from "lucide-react";
+import { LogOut, Trash2 } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
 import { AppShell } from "@/components/app-shell";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { deleteMyAccount } from "@/lib/account.functions";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -120,15 +133,50 @@ function SettingsPage() {
           </div>
         </section>
 
-        <section className="glass animate-rise rounded-2xl p-5">
-          <h2 className="text-sm font-semibold">Session</h2>
-          <p className="text-muted-foreground mt-2 text-sm">
-            Signed in as {user?.email ?? "—"}. Signing out clears cached data on this device.
-          </p>
-          <Button variant="outline" className="mt-4 gap-2" onClick={signOut}>
-            <LogOut className="h-4 w-4" /> Sign out
-          </Button>
-        </section>
+        <div className="grid gap-4">
+          <section className="glass animate-rise rounded-2xl p-5">
+            <h2 className="text-sm font-semibold">Session</h2>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Signed in as {user?.email ?? "—"}. Signing out clears cached data on this device.
+            </p>
+            <Button variant="outline" className="mt-4 gap-2" onClick={signOut}>
+              <LogOut className="h-4 w-4" /> Sign out
+            </Button>
+          </section>
+
+          <section className="glass animate-rise border-destructive/40 rounded-2xl border p-5">
+            <h2 className="text-destructive text-sm font-semibold">Delete account</h2>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Permanently deletes your account along with all transactions, accounts and
+              savings goals. This cannot be undone.
+            </p>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="destructive" className="mt-4 gap-2" disabled={deleting}>
+                  <Trash2 className="h-4 w-4" /> {deleting ? "Deleting…" : "Delete my account"}
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Delete your account?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    All your financial data will be erased permanently. This action cannot
+                    be reversed.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction
+                    className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                    onClick={deleteAccount}
+                  >
+                    Yes, delete everything
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </section>
+        </div>
       </div>
     </AppShell>
   );
