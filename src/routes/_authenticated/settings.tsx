@@ -57,6 +57,8 @@ function SettingsPage() {
   const [fullName, setFullName] = useState("");
   const [currency, setCurrency] = useState("INR");
   const [budget, setBudget] = useState("");
+  const [deleting, setDeleting] = useState(false);
+  const removeAccount = useServerFn(deleteMyAccount);
 
   useEffect(() => {
     if (!profile) return;
@@ -85,6 +87,22 @@ function SettingsPage() {
     queryClient.clear();
     await supabase.auth.signOut();
     navigate({ to: "/auth", replace: true });
+  };
+
+  const deleteAccount = async () => {
+    setDeleting(true);
+    try {
+      await removeAccount({ data: undefined });
+      toast.success("Account deleted");
+      await queryClient.cancelQueries();
+      queryClient.clear();
+      await supabase.auth.signOut();
+      navigate({ to: "/", replace: true });
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not delete account");
+    } finally {
+      setDeleting(false);
+    }
   };
 
   return (
