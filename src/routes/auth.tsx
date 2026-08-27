@@ -94,7 +94,13 @@ function AuthPage() {
         return;
       }
       const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) throw error;
+      if (error) {
+        if (/confirm/i.test(error.message)) {
+          setPending(true);
+          return;
+        }
+        throw error;
+      }
       if (!remember) window.sessionStorage.setItem("finpilot-session-only", "1");
       toast.success("Welcome back");
     });
