@@ -75,7 +75,7 @@ function AuthPage() {
         return;
       }
       if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
@@ -84,7 +84,12 @@ function AuthPage() {
           },
         });
         if (error) throw error;
-        toast.success("Account created. You're in!");
+        if (data.session) {
+          toast.success("Account created. You're in!");
+          return;
+        }
+        setPending(true);
+        toast.success("Account created — confirm your email to continue.");
         return;
       }
       const { error } = await supabase.auth.signInWithPassword({ email, password });
