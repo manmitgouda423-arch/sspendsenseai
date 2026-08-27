@@ -83,10 +83,7 @@ function Landing() {
 
       <main className="mx-auto max-w-6xl px-5 pb-24">
         <section className="animate-rise py-12 text-center sm:py-20">
-          <span className="glass text-muted-foreground inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs">
-            <Sparkles className="text-accent h-3.5 w-3.5" /> Powered by Lovable AI
-          </span>
-          <h1 className="mt-6 text-4xl leading-[1.05] font-black tracking-tight sm:text-6xl">
+          <h1 className="text-4xl leading-[1.05] font-black tracking-tight sm:text-6xl">
             Your money, <span className="text-gradient">on autopilot.</span>
           </h1>
           <p className="text-muted-foreground mx-auto mt-5 max-w-xl text-base sm:text-lg">
